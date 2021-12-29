@@ -15,7 +15,7 @@ export default class DataService {
 
         const [rawCategories, rawPosts, rawPages] = await Promise.all([
             fetch(`${this.url}/wp-json/wp/v2/categories`).then(rawData => rawData.json()),
-            fetch(`${this.url}/wp-json/wp/v2/posts`).then(rawData => rawData.json()),
+            fetch(`${this.url}/wp-json/wp/v2/posts?per_page=100`).then(rawData => rawData.json()),
             fetch(`${this.url}/wp-json/wp/v2/pages`).then(rawData => rawData.json()),
         ]);
 
@@ -38,6 +38,7 @@ export default class DataService {
                 category.count = dataEntry.count;
                 category.parent = dataEntry.parent;
                 category.slug = dataEntry.slug;
+                category.color = dataEntry.acf.iconcolor;
                 this.categories.set(category.id, category);
             }
         }
@@ -54,6 +55,7 @@ export default class DataService {
             post.date = dataEntry.date;
             post.slug = dataEntry.slug;
             post.categories = dataEntry.categories;
+            post.icon = dataEntry.acf.iconname ? dataEntry.acf.iconname : 'potenz';
 
             let currentPostCategory = this.categories.get(post.categories[0]);
             if (currentPostCategory) {

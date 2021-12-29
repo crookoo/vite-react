@@ -8,4 +8,5 @@ export default class Category {
     parent: number = 0;
     slug: string = '';
     posts: Array<Post> = [];
+    color: string = '';
 }

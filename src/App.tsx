@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Home from './components/Home';
 import Layout from "./components/Layout";
 import Navbar from './components/Navbar';
-import PageComponent from "./components/Page";
+import PageComponent from "./components/PageComponent";
 import SinglePost from './components/SinglePost';
 import Spinner from "./components/Spinner";
 

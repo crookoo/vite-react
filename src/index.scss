@@ -1,9 +1,35 @@
+.navbar, .footer {
+  background-color: rgb(236, 236, 236);
+}
+
+
+body.darkmode {
+  background-color: #10171d;
+  color: #dfdfdf;
+
+  .navbar, .footer {
+    background-color: #1b2938;
+  }
+
+  .table, a {
+    color: #dfdfdf;
+  }
+}
+
+
+
 a {
   text-decoration: none;
+  color: #212529;
+}
+
+p {
+  margin-bottom: 1rem;
 }
 
 pre[class*="language-"] {
-  margin-bottom: 1em;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .list-group-item p {
@@ -11,16 +37,37 @@ pre[class*="language-"] {
   font-size: .875em;
 }
 
-.feature h3 {
-  font-size: 18px;
-  line-height: 1.5;
+.feature {
+  hyphens: auto;
+  img {
+    border-bottom: 3px solid;
+  }
+  h3 {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+  p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
 }
 
-.slick-slide > div {
-  padding-right: 15px;
-}
-.slick-list {
-  margin-right: -12px;
+.slick-slider {
+  .slick-list {
+    .slick-track {
+      margin-left: 0;
+      .slick-slide {
+        > div {
+          padding-right: 15px;
+        }
+      }
+    }
+  }
+  .slick-prev, .slick-next {
+    &:before {
+      color: gray;
+    }
+  }
 }
 
 .circle {

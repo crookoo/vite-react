@@ -13,13 +13,13 @@ export default function Parser(props: ParserProps): JSX.Element {
     }, []);
     
     return (
-        <div>
+        <>
             {parseHTML(props.code, {
                 replace: (node: DOMNode) => {
                     if (node.name === 'table') node.attribs.class = "table table-bordered";
                     if (node.name === 'pre') node.attribs.class = "language-js";
                 }
             })}
-        </div>
+        </>
     )
 }

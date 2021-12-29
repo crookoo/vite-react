@@ -6,4 +6,5 @@ export default class Post {
     date: Date = new Date();
     categories: Array<number> = [];
     slug: string = '';
+    icon: string = '';
 }

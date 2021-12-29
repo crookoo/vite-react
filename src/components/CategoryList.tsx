@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import parseHTML from 'html-react-parser';
 import Props from '../model/IProps';
 import Post from '../model/Post';
+import Parser from './Parser';
 
 
 export default function CategoryList(props: Props): JSX.Element {
@@ -12,9 +13,9 @@ export default function CategoryList(props: Props): JSX.Element {
         return (
             <div className="row">
                 <div className="col-lg-4">
-                    <h2 className="mb-3">{category.name}</h2>
+                    <h2 className="my-3">{category.name}</h2>
                     <div className="mb-4">
-                        {category.description}
+                    <Parser code={category.description} />
                     </div>
                 </div>
                 <div className="col">
@@ -23,7 +24,7 @@ export default function CategoryList(props: Props): JSX.Element {
                             <div className="col-3">
                                 <img src="https://via.placeholder.com/160" className="img-fluid" />
                             </div>
-                            <div className="col">
+                            <div className="col category-list-text">
                                 <h2 className="mb-2">
                                     <Link to={`/${category.slug}/${post.slug}`} className="fs-3 /*stretched-link*/ text-reset text-break">
                                         {post.title}

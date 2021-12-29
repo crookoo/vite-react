@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Props from '../model/IProps';
 import Parser from './Parser';
 
