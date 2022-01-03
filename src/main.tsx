@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "prismjs/themes/prism-tomorrow.css";
-import './index.scss'
+import './index.scss';
 import App from './App'
 import ScrollToTop from './components/ScrollToTop';
 

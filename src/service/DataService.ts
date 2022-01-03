@@ -10,7 +10,7 @@ export default class DataService {
 
     private readonly url: string = 'https://ddev-wordpress.ddev.site';
 
-    async loadDataFromServer(setIsLoading: Dispatch<SetStateAction<boolean>>, setState: Dispatch<SetStateAction<DataService>>) {
+    async loadDataFromServer(setIsLoading: Dispatch<SetStateAction<boolean>>, setData: Dispatch<SetStateAction<DataService>>) {
         setIsLoading(true);
 
         const [rawCategories, rawPosts, rawPages] = await Promise.all([
@@ -23,7 +23,7 @@ export default class DataService {
         this.handlePosts(rawPosts);
         this.handlePages(rawPages);
 
-        setState(this);
+        setData(this);
         setIsLoading(false);
     }
 
@@ -80,7 +80,7 @@ export default class DataService {
         }
     }
 
-    getAllPosts() {
+    getAllPosts(): Post[] {
         const it = this.posts.values();
         return Array.from(it);
     }
@@ -89,7 +89,7 @@ export default class DataService {
         return this.getAllPosts().find((post: Post) => post.slug === slug);
     }
 
-    getAllCategories() {
+    getAllCategories(): Category[] {
         const it = this.categories.values();
         return Array.from(it);
     }
