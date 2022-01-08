@@ -3,6 +3,7 @@ import parseHTML from 'html-react-parser';
 import Props from '../model/IProps';
 import Post from '../model/Post';
 import Parser from './Parser';
+import Icon from './Icon';
 
 
 export default function CategoryList(props: Props): JSX.Element {
@@ -22,7 +23,8 @@ export default function CategoryList(props: Props): JSX.Element {
                     {category.posts.map((post: Post) => (
                         <div key={post.id} className="row border-bottom py-3 position-relative">
                             <div className="col-3">
-                                <img src="https://via.placeholder.com/160" className="img-fluid" />
+                                {/* <img src="https://via.placeholder.com/160" className="img-fluid" /> */}
+                                <Icon icon={post.icon} color={category.color} className="img-fluid mb-2" />
                             </div>
                             <div className="col category-list-text">
                                 <h2 className="mb-2">
@@ -30,7 +32,7 @@ export default function CategoryList(props: Props): JSX.Element {
                                         {post.title}
                                     </Link>
                                 </h2>
-                                {parseHTML(post.excerpt)}
+                                <Parser code={post.excerpt} />
                             </div>
                         </div>
                     ))}

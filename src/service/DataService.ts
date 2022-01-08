@@ -1,4 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
+import iconSet from "../assets/selection.json";
+import { iconList } from 'icomoon-react';
 import Category from "../model/Category";
 import Page from "../model/Page";
 import Post from "../model/Post";
@@ -46,6 +48,9 @@ export default class DataService {
 
     handlePosts(data: any): void {
         // console.log(data);
+        console.log(iconList(iconSet));
+        
+        
         for (const dataEntry of data) {
             let post = new Post();
             post.id = dataEntry.id;
@@ -55,7 +60,7 @@ export default class DataService {
             post.date = dataEntry.date;
             post.slug = dataEntry.slug;
             post.categories = dataEntry.categories;
-            post.icon = dataEntry.acf.iconname ? dataEntry.acf.iconname : 'potenz';
+            post.icon = dataEntry.acf.iconname && iconList(iconSet).indexOf(dataEntry.acf.iconname) > -1 ? dataEntry.acf.iconname : 'potenz';
 
             let currentPostCategory = this.categories.get(post.categories[0]);
             if (currentPostCategory) {

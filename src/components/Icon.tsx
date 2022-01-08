@@ -1,5 +1,5 @@
 import IcomoonReact from 'icomoon-react';
-import iconSet from "../assets/icomoon-selection.json";
+import iconSet from "../assets/selection.json";
  
 const Icon: React.FC<{
   color?: string,

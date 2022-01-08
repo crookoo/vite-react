@@ -60,7 +60,6 @@ export default function Home(props: Props): JSX.Element {
                         <Slider {...settings}>
                             {category.posts.map((post: Post) => (
                                 <div key={post.id} className="feature position-relative">
-                                    {/* <img src="https://via.placeholder.com/150" className="img-fluid mb-2" style={{borderColor: category.color}} /> */}
                                     <Icon icon={post.icon} color={category.color} className="img-fluid mb-2" />
                                     <h3 className="mb-1">
                                         <Link to={`/${category.slug}/${post.slug}`} className="text-reset text-break stretched-link">
