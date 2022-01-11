@@ -26,7 +26,7 @@ export default function SinglePost(props: Props): JSX.Element {
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-8 offset-xl-2">
-                            <h3 className="fs-6 my-4r">
+                            <h3 className="fs-6">
                                 <Link to={`/${category.slug}`} className="badge rounded-pill text-dark" style={{ backgroundColor: category.color }}>{category.name}</Link>
                             </h3>
                             <h1 className="mb-3 text-break">{post.title}</h1>

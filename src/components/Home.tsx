@@ -61,7 +61,12 @@ export default function Home(props: Props): JSX.Element {
                         {categories.map((category: Category) => (
                             <div key={category.id} className="category-wrapper">
                                 <div className="d-flex justify-content-between">
-                                    <h2 className="my-3">{category.name}</h2>
+                                    <div className="d-flex justify-content-start">
+                                        <h2 className="my-3 me-3">{category.name}</h2>
+                                        <div className="d-flex align-items-center">
+                                            <span className="badge rounded-pill" style={{ backgroundColor: category.color }}>{category.posts.length} Features</span>
+                                        </div>
+                                    </div>
                                     <span className="d-flex align-items-center"><Link to={`/${category.slug}`}>mehr</Link></span>
                                 </div>
                                 <div className="category-description mb-4">

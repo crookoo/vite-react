@@ -28,7 +28,7 @@ export default function CategoryList(props: Props): JSX.Element {
                                 </div>
                                 <div className="col category-list-text">
                                     <h2 className="mb-2">
-                                        <Link to={`/${category.slug}/${post.slug}`} className="fs-3 /*stretched-link*/ text-reset text-break">
+                                        <Link to={`/${category.slug}/${post.slug}`} className="fs-3 stretched-link text-reset text-break">
                                             {post.title}
                                         </Link>
                                     </h2>

@@ -1,9 +1,11 @@
 export default function Spinner(): JSX.Element {
     return (
         <div className="spinner">
-            <div className="loadingio-spinner-spinner-tsizxnsnt2c"><div className="ldio-0w4hojf88nj">
-                <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-            </div></div>
-        </div>
+            <div className="rect1"></div>
+            <div className="rect2"></div>
+            <div className="rect3"></div>
+            <div className="rect4"></div>
+            <div className="rect5"></div>
+        </div> // Quelle Spinner: https://tobiasahlin.com/spinkit/
     )
 }
