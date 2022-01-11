@@ -11,11 +11,19 @@ export default function Home(props: Props): JSX.Element {
     const categories = props.data.getAllCategories();
     let settings = {
         infinite: false,
-        slidesToShow: 6.5,
+        slidesToShow: 5.5,
         slidesToScroll: 2,
         draggable: false,
         arrows: true,
         responsive: [
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 5.5,
+                    draggable: false,
+                    arrows: true,
+                }
+            },
             {
                 breakpoint: 991,
                 settings: {
@@ -47,31 +55,35 @@ export default function Home(props: Props): JSX.Element {
 
     if (categories) {
         return (
-            <div className="category-container">
-                {categories.map((category: Category) => (
-                    <div key={category.id} className="category-wrapper">
-                        <div className="d-flex justify-content-between">
-                            <h2 className="my-3">{category.name}</h2>
-                            <span className="d-flex align-items-center"><Link to={`/${category.slug}`}>mehr</Link></span>
-                        </div>
-                        <div className="category-description mb-4">
-                            <Parser code={category.description} />
-                        </div>
-                        <Slider {...settings}>
-                            {category.posts.map((post: Post) => (
-                                <div key={post.id} className="feature position-relative">
-                                    <Icon icon={post.icon} color={category.color} className="img-fluid mb-2" />
-                                    <h3 className="mb-1">
-                                        <Link to={`/${category.slug}/${post.slug}`} className="text-reset text-break stretched-link">
-                                            {post.title}
-                                        </Link>
-                                    </h3>
-                                    <Parser code={post.excerpt} />
+            <div className="category-container container pt-6 pb-4">
+                <div className="row">
+                    <div className="col-xl-8 offset-xl-2">
+                        {categories.map((category: Category) => (
+                            <div key={category.id} className="category-wrapper">
+                                <div className="d-flex justify-content-between">
+                                    <h2 className="my-3">{category.name}</h2>
+                                    <span className="d-flex align-items-center"><Link to={`/${category.slug}`}>mehr</Link></span>
                                 </div>
-                            ))}
-                        </Slider>
+                                <div className="category-description mb-4">
+                                    <Parser code={category.description} />
+                                </div>
+                                <Slider {...settings}>
+                                    {category.posts.map((post: Post) => (
+                                        <div key={post.id} className="feature position-relative">
+                                            <Icon icon={post.icon} color={category.color} className="img-fluid mb-2" />
+                                            <h3 className="mb-1">
+                                                <Link to={`/${category.slug}/${post.slug}`} className="text-reset text-break stretched-link">
+                                                    {post.title}
+                                                </Link>
+                                            </h3>
+                                            <Parser code={post.excerpt} />
+                                        </div>
+                                    ))}
+                                </Slider>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                </div>
             </div>
         )
     }

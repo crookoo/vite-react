@@ -1,28 +1,23 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useDarkMode } from "../service/useDarkMode";
 
 export default function Footer() {
-    const [darkMode, setDarkMode] = useState<boolean>(false);
-
-    useEffect(() => {
-        if (darkMode) {
-            document.body.classList.add('darkmode');
-        } else {
-            document.body.classList.remove('darkmode');
-        }
-    }, [darkMode]);
+    const [darkMode, setDarkMode] = useDarkMode();
 
     return (
         <footer className="footer mt-auto py-3">
-            {/* <button onClick={() => setDarkMode(previousValue => !previousValue)}>Toggle</button> */}
-            <div className="container d-flex justify-content-between">
-                <div className="form-check form-check-inline form-switch">
-                    <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={() => setDarkMode(previousValue => !previousValue)}></input>
-                    <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Darkmode</label>
-                </div>
-                <div>
-                    <Link to="/datenschutz">Datenschutz</Link>
-                    <Link to="/impressum" className="ps-3">Impressum</Link>
+            <div className="container">
+                <div className="row">
+                    <div className="col col-xl-4 offset-xl-2">
+                        <div className="form-check form-check-inline form-switch">
+                            <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={darkMode} onClick={() => setDarkMode(previousValue => !previousValue)}></input>
+                            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Darkmode</label>
+                        </div>
+                    </div>
+                    <div className="col col-xl-4 d-flex justify-content-end">
+                        <Link to="/datenschutz">Datenschutz</Link>
+                        <Link to="/impressum" className="ps-3">Impressum</Link>
+                    </div>
                 </div>
             </div>
         </footer>

@@ -2,7 +2,7 @@
 .footer {
   background-color: rgb(236, 236, 236);
 }
-.navbar {
+header {
   background-color: white;
   box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 15%);
 }
@@ -11,7 +11,7 @@ body.darkmode {
   background-color: #10171d;
   color: #dfdfdf;
 
-  .navbar, .footer {
+  header, .footer {
     background-color: #1b2938;
   }
 
@@ -20,7 +20,7 @@ body.darkmode {
   }
   .post-container {
     .post-icon-stage {
-      background-color: #2d2d2d;
+      background-color: black;
     }
     .post-icon {
       background-color: black;;
@@ -42,6 +42,10 @@ p {
 pre[class*="language-"] {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
+}
+
+.pt-6 {
+  padding-top: 5rem;
 }
 
 .list-group-item p {
@@ -85,11 +89,12 @@ pre[class*="language-"] {
 .post-container {
   .post-icon-stage {
     background-color: #f5f5f5;
-    padding: 25px;
-    margin: 10px 0 30px;
-    border-radius: 3px;
+    padding: 91px 0 31px;
+    margin: 0 0 30px;
     text-align: center;
-
+    @media (min-width: 992px) {
+      text-align: left;
+    }
   }
   .post-icon{
     max-width: 135px;

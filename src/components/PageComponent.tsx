@@ -10,10 +10,14 @@ export default function PageComponent(props: Props): JSX.Element {
 
     if (page) {
         return (
-            <div className="col-xl-8 offset-xl-2">
-                <h1>{page.title}</h1>
-                {parseHTML(page.content)}
-            </div>
+            <div className="container pt-6 pb-4">
+                <div className="row">
+                    <div className="col-xl-8 offset-xl-2">
+                        <h1>{page.title}</h1>
+                        {parseHTML(page.content)}
+                    </div>
+                </div>
+            </div >
         )
     }
     return <div></div>
