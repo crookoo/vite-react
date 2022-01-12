@@ -60,7 +60,7 @@ export default class DataService {
             post.date = dataEntry.date;
             post.slug = dataEntry.slug;
             post.categories = dataEntry.categories;
-            post.icon = dataEntry.acf.iconname && iconList(iconSet).indexOf(dataEntry.acf.iconname) > -1 ? dataEntry.acf.iconname : 'potenz';
+            post.icon = dataEntry.acf.iconname && iconList(iconSet).indexOf(dataEntry.acf.iconname) > -1 ? dataEntry.acf.iconname : 'dummy';
 
             let currentPostCategory = this.categories.get(post.categories[0]);
             if (currentPostCategory) {
