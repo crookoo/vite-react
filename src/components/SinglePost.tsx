@@ -4,6 +4,7 @@ import Props from '../model/IProps';
 import Post from '../model/Post';
 import Icon from './Icon';
 import Parser from './Parser';
+import PaginationButton from './partials/PaginationButton';
 
 
 export default function SinglePost(props: Props): JSX.Element {
@@ -12,6 +13,9 @@ export default function SinglePost(props: Props): JSX.Element {
     const category: Category | undefined = props.data.getFromCategories(categorySlug!);
 
     if (post && category) {
+        const prevPost: Post | undefined = props.data.getFromPostsViaId(post.prev);
+        const nextPost: Post | undefined = props.data.getFromPostsViaId(post.next);
+
         return (
             <div className="post-container pb-4">
                 <div className="post-icon-stage">
@@ -33,8 +37,16 @@ export default function SinglePost(props: Props): JSX.Element {
                             <h2 className="fs-5"><Parser code={post.excerpt} /></h2>
                             <div className="hr-short" style={{ backgroundColor: category.color }}></div>
 
-                            <div className="content mb-4">
+                            <div className="content mb-5">
                                 <Parser code={post.content} />
+                            </div>
+                            <div className="row mb-3 gy-3">
+                                <div className="col-md-6">
+                                    <PaginationButton post={prevPost} data={props.data} prev={true} />
+                                </div>
+                                <div className="col-md-6">
+                                    <PaginationButton post={nextPost} data={props.data} prev={false} />
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -123,6 +123,42 @@ pre[class*="language-"] {
     border-radius: 3px;
     box-shadow: 5px 5px 21px 0px rgb(0 0 0 / 16%);
   }
+  .post-page-link {
+    border: 1px solid lightgray;
+    &:hover {
+      border-color: rgb(155, 155, 184);
+      .page-arrow {
+        color: rgb(84, 81, 141);
+        &.left {
+          animation: bounceLeft 1s ease infinite;
+        }
+        &.right {
+          animation: bounceRight 1s ease infinite;
+        }
+      }
+    }
+    .page-arrow {
+      color: gray;
+      font-size: 30px;
+    }
+    a {
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+}
+
+@keyframes bounceLeft {
+  0%   { transform: translateX(0); }
+  50%   { transform: translateX(-8px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes bounceRight {
+  0%   { transform: translateX(0); }
+  50%   { transform: translateX(8px); }
+  100% { transform: translateX(0); }
 }
 
 .hr-short {

@@ -49,9 +49,9 @@ export default class DataService {
     handlePosts(data: any): void {
         // console.log(data);
         console.log(iconList(iconSet));
-        
-        
-        for (const dataEntry of data) {
+
+        data.forEach((dataEntry: any, i: number, thisArray: Array<any>) => {
+
             let post = new Post();
             post.id = dataEntry.id;
             post.title = dataEntry.title.rendered;
@@ -68,8 +68,11 @@ export default class DataService {
                 this.categories.set(post.categories[0], currentPostCategory);
             }
 
+            post.prev = thisArray[i - 1]?.id || thisArray[thisArray.length - 1].id;
+            post.next = thisArray[i + 1]?.id || thisArray[0].id;
+
             this.posts.set(post.id, post);
-        }
+        });
     }
 
     handlePages(data: any): void {
@@ -92,6 +95,10 @@ export default class DataService {
 
     getFromPosts(slug: string): Post | undefined {
         return this.getAllPosts().find((post: Post) => post.slug === slug);
+    }
+
+    getFromPostsViaId(id: number): Post | undefined {
+        return this.posts.get(id);
     }
 
     getAllCategories(): Category[] {

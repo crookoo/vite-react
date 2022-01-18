@@ -1,5 +1,4 @@
 import { useParams, Link } from 'react-router-dom';
-import parseHTML from 'html-react-parser';
 import Props from '../model/IProps';
 import Post from '../model/Post';
 import Parser from './Parser';

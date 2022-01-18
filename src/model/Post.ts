@@ -7,4 +7,6 @@ export default class Post {
     categories: Array<number> = [];
     slug: string = '';
     icon: string = '';
+    prev: number = -1;
+    next: number = -1;
 }
