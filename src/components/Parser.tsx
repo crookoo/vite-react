@@ -10,8 +10,8 @@ export default function Parser(props: ParserProps): JSX.Element {
 
     useEffect(() => {
         Prism.highlightAll();
-    }, []);
-    
+    }, [props.code]);
+
     return (
         <>
             {parseHTML(props.code, {

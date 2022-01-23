@@ -130,10 +130,10 @@ pre[class*="language-"] {
       .page-arrow {
         color: rgb(84, 81, 141);
         &.left {
-          animation: bounceLeft 1s ease infinite;
+          animation: bounceLeft .5s ease 1 forwards;
         }
         &.right {
-          animation: bounceRight 1s ease infinite;
+          animation: bounceRight .5s ease 1 forwards;
         }
       }
     }
@@ -151,14 +151,12 @@ pre[class*="language-"] {
 
 @keyframes bounceLeft {
   0%   { transform: translateX(0); }
-  50%   { transform: translateX(-8px); }
-  100% { transform: translateX(0); }
+  100%   { transform: translateX(-8px); }
 }
 
 @keyframes bounceRight {
   0%   { transform: translateX(0); }
-  50%   { transform: translateX(8px); }
-  100% { transform: translateX(0); }
+  100%   { transform: translateX(8px); }
 }
 
 .hr-short {

@@ -20,8 +20,8 @@ export default function CategoryList(props: Props): JSX.Element {
                         </div>
                     </div>
                     <div className="col-lg-7 col-xl-5">
-                        {category.posts.map((post: Post) => (
-                            <div key={post.id} className="row border-top py-3 position-relative">
+                        {category.posts.map((post: Post, index: number) => (
+                            <div key={post.id} className={"row py-3 position-relative" + (index > 0 ? " border-top" : "")}>
                                 <div className="col-3">
                                     <Icon icon={post.icon} color={category.color} className="img-fluid mb-2" />
                                 </div>

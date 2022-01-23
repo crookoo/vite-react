@@ -55,7 +55,7 @@ export default function SinglePost(props: Props): JSX.Element {
         )
     }
     return (
-        <div></div>
+        <></>
     )
 
 }
