@@ -10,7 +10,9 @@ export default class DataService {
     private categories: Map<number, Category> = new Map();
     private pages: Map<number, Page> = new Map();
 
-    private readonly url: string = 'https://ddev-wordpress.ddev.site';
+    private readonly url: string = process.env.NODE_ENV === 'development' ?
+        'https://ddev-wordpress.ddev.site/' :
+        'https://stage4.michaelzimmermann.com/';
 
     async loadDataFromServer(setIsLoading: Dispatch<SetStateAction<boolean>>, setData: Dispatch<SetStateAction<DataService>>) {
         setIsLoading(true);

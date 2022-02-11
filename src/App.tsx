@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Home from './components/Home';
 import Layout from "./components/Layout";
 import Navbar from './components/Navbar';
-import PageComponent from "./components/PageComponent";
+import PageScreen from "./components/PageScreen";
 import SinglePost from './components/SinglePost';
 import Spinner from "./components/Spinner";
 
@@ -27,8 +27,8 @@ export default function App() {
             <Route index element={<Home data={data} />} />
             <Route path=":categorySlug" element={<CategoryList data={data} />} />
             <Route path=":categorySlug/:postSlug" element={<SinglePost data={data} />} />
-            <Route path="impressum" element={<PageComponent data={data} />} />
-            <Route path="datenschutz" element={<PageComponent data={data} />} />
+            <Route path="impressum" element={<PageScreen data={data} />} />
+            <Route path="datenschutz" element={<PageScreen data={data} />} />
           </Route>
         </Routes>
       }
