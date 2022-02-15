@@ -79,13 +79,15 @@ export default class DataService {
 
     handlePages(data: any): void {
         for (const dataEntry of data) {
-            let page = new Post();
+            let page = new Page();
             page.id = dataEntry.id;
             page.title = dataEntry.title.rendered;
             page.content = dataEntry.content.rendered;
             page.excerpt = dataEntry.excerpt.rendered;
             page.date = dataEntry.date;
             page.slug = dataEntry.slug;
+            page.metaDescription = dataEntry.acf.meta_description;
+            page.metaTitle = dataEntry.acf.meta_title;
             this.pages.set(page.id, page);
         }
     }

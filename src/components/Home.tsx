@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
 import Props from '../model/IProps';
 import Category from '../model/Category';
-import Parser from './Parser';
-import HomeSlider from './HomeSlider';
+import Parser from './partials/Parser';
+import HomeSlider from './partials/HomeSlider';
 import Hero from './partials/Hero';
 
-
 export default function Home(props: Props): JSX.Element {
-    const hero = props.data.getFromPages('hero2');
+    const hero = props.data.getFromPages('hero');
     const categories = props.data.getAllCategories();
 
     return (
@@ -18,7 +17,7 @@ export default function Home(props: Props): JSX.Element {
                 <div>No hero content available</div>
             }
             
-            <div className="category-container container pt-6 pb-4" id="content">
+            <div className="category-container container py-5" id="content">
                 <div className="row">
                     <div className="col-xl-8 offset-xl-2">
                         {

@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 import parseHTML from 'html-react-parser';
 import Props from "../model/IProps";
 import Page from "../model/Page";
+import MetaDecorator from './partials/MetaDecorator';
 
 export default function PageScreen(props: Props): JSX.Element {
     const { pathname } = useLocation();
@@ -15,6 +16,7 @@ export default function PageScreen(props: Props): JSX.Element {
                     {
                         page ? (
                             <>
+                                <MetaDecorator title={page.metaTitle} description={page.metaDescription} />
                                 <h1>{page.title}</h1>
                                 {parseHTML(page.content)}
                             </>

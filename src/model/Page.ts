@@ -5,4 +5,6 @@ export default class Page {
     content: string = '';
     date: Date = new Date();
     slug: string = '';
+    metaDescription: string = '';
+    metaTitle: string = '';
 }

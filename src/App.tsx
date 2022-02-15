@@ -8,7 +8,7 @@ import Layout from "./components/Layout";
 import Navbar from './components/Navbar';
 import PageScreen from "./components/PageScreen";
 import SinglePost from './components/SinglePost';
-import Spinner from "./components/Spinner";
+import Spinner from "./components/partials/Spinner";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -21,16 +21,17 @@ export default function App() {
   return (
     <div className="d-flex flex-column h-100">
       <Navbar />
-      {isLoading ? <Spinner /> :
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home data={data} />} />
-            <Route path=":categorySlug" element={<CategoryList data={data} />} />
-            <Route path=":categorySlug/:postSlug" element={<SinglePost data={data} />} />
-            <Route path="impressum" element={<PageScreen data={data} />} />
-            <Route path="datenschutz" element={<PageScreen data={data} />} />
-          </Route>
-        </Routes>
+      {
+        isLoading ? <Spinner /> :
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home data={data} />} />
+              <Route path=":categorySlug" element={<CategoryList data={data} />} />
+              <Route path=":categorySlug/:postSlug" element={<SinglePost data={data} />} />
+              <Route path="impressum" element={<PageScreen data={data} />} />
+              <Route path="datenschutz" element={<PageScreen data={data} />} />
+            </Route>
+          </Routes>
       }
       <Footer />
     </div>

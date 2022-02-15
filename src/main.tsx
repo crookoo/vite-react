@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "prismjs/themes/prism-tomorrow.css";
 import './index.scss';
 import App from './App'
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from './components/partials/ScrollToTop';
 
 ReactDOM.render(
   <React.StrictMode>

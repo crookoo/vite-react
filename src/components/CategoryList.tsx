@@ -1,8 +1,9 @@
 import { useParams, Link } from 'react-router-dom';
 import Props from '../model/IProps';
 import Post from '../model/Post';
-import Parser from './Parser';
-import Icon from './Icon';
+import Parser from './partials/Parser';
+import Icon from './partials/Icon';
+import MetaDecorator from './partials/MetaDecorator';
 
 
 export default function CategoryList(props: Props): JSX.Element {
@@ -12,6 +13,7 @@ export default function CategoryList(props: Props): JSX.Element {
     if (category) {
         return (
             <div className="container pt-6">
+                <MetaDecorator title={category.name} description={category.description} />
                 <div className="row">
                     <div className="col-lg-5 col-xl-3 offset-xl-2">
                         <h2 className="my-3">{category.name}</h2>

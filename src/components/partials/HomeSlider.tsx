@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import Category from "../model/Category";
-import Post from '../model/Post';
+import Category from "../../model/Category";
+import Post from '../../model/Post';
 import Icon from "./Icon";
 import Parser from "./Parser";
 

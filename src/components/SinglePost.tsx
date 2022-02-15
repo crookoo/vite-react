@@ -2,9 +2,10 @@ import { Link, useParams } from 'react-router-dom';
 import Category from '../model/Category';
 import Props from '../model/IProps';
 import Post from '../model/Post';
-import Icon from './Icon';
-import Parser from './Parser';
+import Icon from './partials/Icon';
+import Parser from './partials/Parser';
 import PaginationButton from './partials/PaginationButton';
+import MetaDecorator from './partials/MetaDecorator';
 
 
 export default function SinglePost(props: Props): JSX.Element {
@@ -18,6 +19,7 @@ export default function SinglePost(props: Props): JSX.Element {
 
         return (
             <div className="post-container pb-4">
+                <MetaDecorator title={`${post.title} (${category.name})`} description={post.excerpt} />
                 <div className="post-icon-stage">
                     <div className="container">
                         <div className="row">
