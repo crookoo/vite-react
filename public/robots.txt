@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://stage4.netlify.app/sitemap.txt

@@ -1,5 +1,14 @@
-# The following redirect is intended for use with most SPAs 
-# that handle routing internally.
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots.txt"
+  status = 200
+
+[[redirects]]
+  from = "/sitemap.txt"
+  to = "/sitemap.txt"
+  status = 200
+
+# The following redirect is intended for use with most SPAs that handle routing internally.
 [[redirects]]
   from = "/*"
   to = "/index.html"
