@@ -6,7 +6,7 @@ import Icon from './partials/Icon';
 import Parser from './partials/Parser';
 import PaginationButton from './partials/PaginationButton';
 import MetaDecorator from './partials/MetaDecorator';
-
+import NotFound from './NotFound';
 
 export default function SinglePost(props: Props): JSX.Element {
     const { categorySlug, postSlug } = useParams();
@@ -55,9 +55,9 @@ export default function SinglePost(props: Props): JSX.Element {
                 </div>
             </div>
         )
+    } else {
+        return (
+            <NotFound referrer="SinglePost" />
+        )
     }
-    return (
-        <></>
-    )
-
 }

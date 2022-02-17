@@ -122,4 +122,14 @@ export default class DataService {
         return Array.from(this.pages.values()).find((page: Page) => page.slug === slug);
     }
 
+    generateSitemap(): string {
+        let sitemapString = '';
+        const categories = this.getAllCategories();
+        categories.forEach(category => {
+            sitemapString += `${this.url}${category.slug}/<br />`;
+            category.posts.forEach(post => sitemapString += `${this.url}${category.slug}/${post.slug}/<br />`);
+        })
+        return sitemapString;
+    }
+
 }

@@ -9,6 +9,8 @@ import Navbar from './components/Navbar';
 import PageScreen from "./components/PageScreen";
 import SinglePost from './components/SinglePost';
 import Spinner from "./components/partials/Spinner";
+import NotFound from "./components/NotFound";
+import SitemapGenerator from "./components/SitemapGenerator";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -30,7 +32,9 @@ export default function App() {
               <Route path=":categorySlug/:postSlug" element={<SinglePost data={data} />} />
               <Route path="impressum" element={<PageScreen data={data} />} />
               <Route path="datenschutz" element={<PageScreen data={data} />} />
+              <Route path="sitemap" element={<SitemapGenerator data={data} />} />
             </Route>
+            <Route path="*" element={<NotFound referrer="Wurzelelement" />} />
           </Routes>
       }
       <Footer />

@@ -4,7 +4,7 @@ import Post from '../model/Post';
 import Parser from './partials/Parser';
 import Icon from './partials/Icon';
 import MetaDecorator from './partials/MetaDecorator';
-
+import NotFound from './NotFound';
 
 export default function CategoryList(props: Props): JSX.Element {
     const { categorySlug } = useParams();
@@ -41,9 +41,9 @@ export default function CategoryList(props: Props): JSX.Element {
                 </div>
             </div>
         )
+    } else {
+        return (
+            <NotFound referrer="CategoryList" />
+        )
     }
-    return (
-        <div></div>
-    )
-
 }
