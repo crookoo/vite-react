@@ -19,7 +19,7 @@ export default function SinglePost(props: Props): JSX.Element {
 
         return (
             <div className="post-container pb-4">
-                <MetaDecorator title={`${category.name}: ${post.title}`} description={post.excerpt} />
+                <MetaDecorator title={`${post.title} - ${category.name}`} description={post.excerpt} />
                 <div className="post-icon-stage">
                     <div className="container">
                         <div className="row">
