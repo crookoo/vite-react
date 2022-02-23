@@ -124,14 +124,43 @@ export default class DataService {
 
     generateSitemap(): string {
         const url: string = process.env.NODE_ENV === 'development' ?
-        'http://localhost:3000/' :
-        'https://stage4.netlify.app/';
+            'http://localhost:3000/' :
+            'https://stage4.netlify.app/';
         let sitemapString = '';
         const categories = this.getAllCategories();
         categories.forEach(category => {
             sitemapString += `${url}${category.slug}/<br />`;
             category.posts.forEach(post => sitemapString += `${url}${category.slug}/${post.slug}/<br />`);
         })
+        return sitemapString;
+    }
+
+    generateXmlSitemap(): string {
+        const url: string = process.env.NODE_ENV === 'development' ?
+            'http://localhost:3000/' :
+            'https://stage4.netlify.app/';
+        let sitemapString = `
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        `;
+        const categories = this.getAllCategories();
+        categories.forEach(category => {
+            sitemapString += `
+    <url>
+        <loc>${url}${category.slug}/</loc>
+        <lastmod>2022-02-23</lastmod>
+    </url>
+            `;
+            category.posts.forEach(post => sitemapString += `
+    <url>
+        <loc>${url}${category.slug}/${post.slug}/</loc>
+        <lastmod>2022-02-23</lastmod>
+    </url>
+            `);
+        })
+        sitemapString += `
+</urlset>
+        `;
         return sitemapString;
     }
 
