@@ -13,6 +13,11 @@
   to = "/sitemap.xml"
   status = 200
 
+[[redirects]]
+  from = "/test"
+  to = "/test"
+  status = 200
+
 # The following redirect is intended for use with most SPAs that handle routing internally.
 [[redirects]]
   from = "/*"
