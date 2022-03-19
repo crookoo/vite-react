@@ -12,7 +12,7 @@ export default function PageScreen(props: Props): JSX.Element {
 
     if (page) {
         return (
-            <div className="container pt-6 pb-4">
+            <div className="container pt-6 pb-4 page-screen">
                 <div className="row">
                     <div className="col-xl-8 offset-xl-2">
                         <MetaDecorator title={page.metaTitle} description={page.metaDescription} />
