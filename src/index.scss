@@ -32,7 +32,17 @@ body.darkmode {
   }
 }
 
+h1 {
+  font-size: calc(1.15rem + 1.5vw);
+  @media (min-width: 1200px) {
+    font-size: 2.0rem;
+  }
+  margin-bottom: 1.5rem;
+}
 
+h2 {
+  font-size: 1.3rem;
+}
 
 a {
   text-decoration: none;

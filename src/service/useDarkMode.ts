@@ -8,11 +8,10 @@ export function useDarkMode(): [boolean, Dispatch<SetStateAction<boolean>>] {
         if (darkMode) {
             document.body.classList.add('darkmode');
             window.localStorage.setItem('darkmode', JSON.stringify(true));
-            console.log(window.localStorage.getItem('darkmode'));
-        } else {
+        } else if (window.localStorage.getItem('darkmode') === null) {
+        } else if (!darkMode) {
             document.body.classList.remove('darkmode');
             window.localStorage.setItem('darkmode', JSON.stringify(false));
-            console.log(window.localStorage.getItem('darkmode'));
         }
     }, [darkMode]);
 
