@@ -12,11 +12,11 @@ export default function CategoryList(props: Props): JSX.Element {
 
     if (category) {
         return (
-            <div className="container pt-6">
+            <div className="container pt-6 pb-4 category-list">
                 <MetaDecorator title={category.name} description={category.description} />
                 <div className="row">
                     <div className="col-lg-5 col-xl-3 offset-xl-2">
-                        <h2 className="my-3">{category.name}</h2>
+                        <h1 className="my-3 fs-2">{category.name}</h1>
                         <div className="mb-4">
                             <Parser code={category.description} />
                         </div>
@@ -28,8 +28,8 @@ export default function CategoryList(props: Props): JSX.Element {
                                     <Icon icon={post.icon} color={category.color} className="img-fluid mb-2" />
                                 </div>
                                 <div className="col category-list-text">
-                                    <h2 className="mb-2">
-                                        <Link to={`/${category.slug}/${post.slug}`} className="fs-3 stretched-link text-reset text-break">
+                                    <h2 className="fs-4">
+                                        <Link to={`/${category.slug}/${post.slug}`} className="stretched-link text-reset text-break">
                                             {post.title}
                                         </Link>
                                     </h2>

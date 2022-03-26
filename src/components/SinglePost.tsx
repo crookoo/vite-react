@@ -18,7 +18,7 @@ export default function SinglePost(props: Props): JSX.Element {
         const nextPost: Post | undefined = props.data.getFromPostsViaId(post.next);
 
         return (
-            <div className="post-container pb-4">
+            <div className="pb-4 single-post">
                 <MetaDecorator title={`${post.title} - ${category.name}`} description={post.excerpt} />
                 <div className="post-icon-stage">
                     <div className="container">

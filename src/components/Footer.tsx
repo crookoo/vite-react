@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useDarkMode } from "../service/useDarkMode";
-// import DarkModeToggle from 'react-dark-mode-toggle';
 
 export default function Footer() {
     const [darkMode, setDarkMode] = useDarkMode();
@@ -14,7 +13,6 @@ export default function Footer() {
                             <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" defaultChecked={darkMode} onClick={() => setDarkMode(previousValue => !previousValue)}></input>
                             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Darkmode</label>
                         </div>
-                        {/* <DarkModeToggle onChange={setDarkMode} checked={darkMode} size={52} speed={2} /> */}
                     </div>
                     <div className="col col-xl-4 d-flex justify-content-end">
                         <Link to="/datenschutz">Datenschutz</Link>
