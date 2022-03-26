@@ -1,11 +1,11 @@
 import IcomoonReact from 'icomoon-react';
 import iconSet from "../../assets/selection.json";
- 
+
 const Icon: React.FC<{
   color?: string,
   size?: string | number,
   icon: string,
-  className?: string 
+  className?: string
 }> = props => {
   const { color, size = "100%", icon, className = "" } = props;
   return (
@@ -18,5 +18,5 @@ const Icon: React.FC<{
     />
   );
 };
- 
+
 export default Icon;

@@ -50,7 +50,7 @@ export default class DataService {
 
     handlePosts(data: any): void {
         // console.log(data);
-        console.log(iconList(iconSet));
+        // console.log(iconList(iconSet));
 
         data.forEach((dataEntry: any, i: number, thisArray: Array<any>) => {
 
