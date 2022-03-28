@@ -1,12 +1,8 @@
 import IcomoonReact from 'icomoon-react';
 import iconSet from "../../assets/selection.json";
+import IconProps from "../../model/IIconProps";
 
-const Icon: React.FC<{
-  color?: string,
-  size?: string | number,
-  icon: string,
-  className?: string
-}> = props => {
+export default function Icon(props: IconProps): JSX.Element {
   const { color, size = "100%", icon, className = "" } = props;
   return (
     <IcomoonReact
@@ -17,6 +13,4 @@ const Icon: React.FC<{
       icon={icon}
     />
   );
-};
-
-export default Icon;
+}
