@@ -23,13 +23,15 @@ export default function CategoryList(props: Props): JSX.Element {
                     </div>
                     <div className="col-lg-7 col-xl-5">
                         {category.posts.map((post: Post, index: number) => (
-                            <div key={post.id} className={"row py-3 position-relative" + (index > 0 ? " border-top" : "")}>
+                            <div key={post.id}
+                                className={"row py-3 position-relative" + (index > 0 ? " border-top" : "")}>
                                 <div className="col-3">
                                     <Icon icon={post.icon} color={category.color} className="img-fluid" />
                                 </div>
                                 <div className="col category-list-text">
                                     <h2 className="fs-4">
-                                        <Link to={`/${category.slug}/${post.slug}`} className="stretched-link text-reset text-break">
+                                        <Link to={`/${category.slug}/${post.slug}`}
+                                            className="stretched-link text-reset text-break">
                                             {post.title}
                                         </Link>
                                     </h2>

@@ -18,7 +18,8 @@ export default function PaginationButton(props: PaginationButtonProps): JSX.Elem
                         <div className="fw-light">
                             Vorheriges
                         </div>
-                        <Link className="stretched-link" to={`/${props.data.getFromCategoriesViaId(props.post?.categories[0] as number)?.slug}/${props.post?.slug}`}>
+                        <Link className="stretched-link"
+                            to={`/${props.data.getFromCategoriesViaId(props.post?.categories[0] as number)?.slug}/${props.post?.slug}`}>
                             {props.post?.title}
                         </Link>
                     </div>
@@ -28,7 +29,8 @@ export default function PaginationButton(props: PaginationButtonProps): JSX.Elem
                         <div className="fw-light">
                             Nächstes
                         </div>
-                        <Link className="stretched-link" to={`/${props.data.getFromCategoriesViaId(props.post?.categories[0] as number)?.slug}/${props.post?.slug}`}>
+                        <Link className="stretched-link"
+                            to={`/${props.data.getFromCategoriesViaId(props.post?.categories[0] as number)?.slug}/${props.post?.slug}`}>
                             {props.post?.title}
                         </Link>
                     </div>

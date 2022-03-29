@@ -1,6 +1,11 @@
 import { Helmet } from "react-helmet";
 
-export default function MetaDecorator(props: { title: string, description: string }) {
+interface MetaDecoratorProps {
+    title: string,
+    description: string,
+}
+
+export default function MetaDecorator(props: MetaDecoratorProps) {
     return (
         <Helmet>
             <title>{`${props.title} - stage4`}</title>

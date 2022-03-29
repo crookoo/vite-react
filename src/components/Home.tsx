@@ -28,7 +28,8 @@ export default function Home(props: Props): JSX.Element {
                                             <div className="d-flex justify-content-start">
                                                 <h2 className="my-3 me-3">{category.name}</h2>
                                                 <div className="d-flex align-items-center">
-                                                    <span className="badge rounded-pill" style={{ backgroundColor: category.color }}>
+                                                    <span className="badge rounded-pill"
+                                                        style={{ backgroundColor: category.color }}>
                                                         {category.posts.length} Features
                                                     </span>
                                                 </div>

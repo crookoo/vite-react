@@ -5,7 +5,11 @@ import Post from '../../model/Post';
 import Icon from "./Icon";
 import Parser from "./Parser";
 
-export default function HomeSlider(props: { category: Category }) {
+interface HomeSliderProps {
+    category: Category;
+}
+
+export default function HomeSlider(props: HomeSliderProps) {
     let settings = {
         infinite: false,
         slidesToShow: 5.5,
@@ -56,7 +60,8 @@ export default function HomeSlider(props: { category: Category }) {
                 <div key={post.id} className="feature position-relative">
                     <Icon icon={post.icon} color={props.category.color} className="img-fluid mb-2" />
                     <h3 className="mb-1">
-                        <Link to={`/${props.category.slug}/${post.slug}`} className="text-reset text-break stretched-link">
+                        <Link to={`/${props.category.slug}/${post.slug}`}
+                            className="text-reset text-break stretched-link">
                             {post.title}
                         </Link>
                     </h3>

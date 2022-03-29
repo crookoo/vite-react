@@ -32,7 +32,6 @@ export default class DataService {
     }
 
     handleCategories(data: any): void {
-        // console.log(data);
         for (const dataEntry of data) {
             if (dataEntry.count > 0) {
                 let category = new Category();
@@ -49,11 +48,7 @@ export default class DataService {
     }
 
     handlePosts(data: any): void {
-        // console.log(data);
-        // console.log(iconList(iconSet));
-
         data.forEach((dataEntry: any, i: number, thisArray: Array<any>) => {
-
             let post = new Post();
             post.id = dataEntry.id;
             post.title = dataEntry.title.rendered;

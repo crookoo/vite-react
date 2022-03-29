@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-export default function NotFound(props: { referrer: string }): JSX.Element {
+interface NotFoundProps {
+    referrer: string,
+}
+
+export default function NotFound(props: NotFoundProps): JSX.Element {
     return (
         <div className="container pt-6 pb-4">
             <div className="row">

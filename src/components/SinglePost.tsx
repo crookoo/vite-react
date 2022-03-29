@@ -33,12 +33,15 @@ export default function SinglePost(props: Props): JSX.Element {
                     <div className="row">
                         <div className="col-xl-8 offset-xl-2">
                             <h3 className="fs-6">
-                                <Link to={`/${category.slug}`} className="badge rounded-pill text-dark" style={{ backgroundColor: category.color }}>{category.name}</Link>
+                                <Link to={`/${category.slug}`}
+                                    className="badge rounded-pill text-dark"
+                                    style={{ backgroundColor: category.color }}>
+                                    {category.name}
+                                </Link>
                             </h3>
                             <h1 className="mb-3 text-break">{post.title}</h1>
                             <h2 className="fs-5"><Parser code={post.excerpt} /></h2>
-                            <div className="hr-short" style={{ backgroundColor: category.color }}></div>
-
+                            <div className="hr-short" style={{ backgroundColor: category.color }} />
                             <div className="content mb-5">
                                 <Parser code={post.content} />
                             </div>

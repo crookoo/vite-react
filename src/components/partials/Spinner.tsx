@@ -8,6 +8,8 @@ export default function Spinner(): JSX.Element {
             <div className="rect3"></div>
             <div className="rect4"></div>
             <div className="rect5"></div>
-        </div> // Quelle Spinner: https://tobiasahlin.com/spinkit/
+        </div>
     )
 }
+
+// Quelle Spinner: https://tobiasahlin.com/spinkit/
