@@ -1,17 +1,20 @@
 [[redirects]]
   from = "/robots.txt"
-  to = "/robots.txt"
+  to = "https://stage4.netlify.app/robots.txt"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/sitemap.txt"
-  to = "/sitemap.txt"
+  to = "https://stage4.netlify.app/sitemap.txt"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/sitemap.xml"
-  to = "/sitemap.xml"
+  to = "https://stage4.netlify.app/sitemap.xml"
   status = 200
+  force = true
 
 # The following redirect is intended for use with most SPAs that handle routing internally.
 [[redirects]]
