@@ -15,7 +15,7 @@ export default function PageScreen(props: Props): JSX.Element {
             <div className="container pt-6 pb-4 page-screen">
                 <div className="row">
                     <div className="col-xl-8 offset-xl-2">
-                        <MetaDecorator title={page.metaTitle} description={page.metaDescription} />
+                        <MetaDecorator title={page.metaTitle} description={page.metaDescription} url={pathname} />
                         <h1>{page.title}</h1>
                         {parseHTML(page.content)}
                     </div>

@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import Category from '../model/Category';
 import Props from '../model/IProps';
 import Post from '../model/Post';
@@ -9,6 +9,7 @@ import MetaDecorator from './partials/MetaDecorator';
 import NotFound from './NotFound';
 
 export default function SinglePost(props: Props): JSX.Element {
+    const { pathname } = useLocation();
     const { categorySlug, postSlug } = useParams();
     const post: Post | undefined = props.data.getFromPosts(postSlug!);
     const category: Category | undefined = props.data.getFromCategories(categorySlug!);
@@ -19,7 +20,7 @@ export default function SinglePost(props: Props): JSX.Element {
 
         return (
             <div className="pb-4 single-post">
-                <MetaDecorator title={`${post.title} - ${category.name}`} description={post.excerpt} />
+                <MetaDecorator title={`${post.title} - ${category.name}`} description={post.excerpt} url={pathname} />
                 <div className="post-icon-stage">
                     <div className="container">
                         <div className="row">

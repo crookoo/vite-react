@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import Props from '../model/IProps';
 import Post from '../model/Post';
 import Parser from './partials/Parser';
@@ -7,13 +7,14 @@ import MetaDecorator from './partials/MetaDecorator';
 import NotFound from './NotFound';
 
 export default function CategoryList(props: Props): JSX.Element {
+    const { pathname } = useLocation();
     const { categorySlug } = useParams();
     const category = props.data.getFromCategories(categorySlug!);
 
     if (category) {
         return (
             <div className="container pt-6 pb-4 category-list">
-                <MetaDecorator title={category.name} description={category.description} />
+                <MetaDecorator title={category.name} description={category.description} url={pathname} />
                 <div className="row">
                     <div className="col-lg-5 col-xl-3 offset-xl-2">
                         <h1 className="my-3 fs-2">{category.name}</h1>
