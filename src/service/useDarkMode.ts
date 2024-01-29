@@ -7,10 +7,12 @@ export function useDarkMode(): [boolean, Dispatch<SetStateAction<boolean>>] {
     useEffect(() => {
         if (darkMode) {
             document.body.classList.add('darkmode');
+            document.body.setAttribute('data-bs-theme', 'dark');
             window.localStorage.setItem('darkmode', JSON.stringify(true));
         } else if (window.localStorage.getItem('darkmode') === null) {
         } else if (!darkMode) {
             document.body.classList.remove('darkmode');
+            document.body.setAttribute('data-bs-theme', 'light');
             window.localStorage.setItem('darkmode', JSON.stringify(false));
         }
     }, [darkMode]);
